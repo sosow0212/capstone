@@ -7,7 +7,8 @@ import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Data
+@Getter
+@Setter
 @Entity
 public class Member extends EntityDate {
     @Id

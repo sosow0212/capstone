@@ -1,14 +1,13 @@
 package com.example.capstone.entity.pill;
 
 import com.example.capstone.entity.common.EntityDate;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pill extends EntityDate {
