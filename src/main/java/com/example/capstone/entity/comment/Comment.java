@@ -1,6 +1,7 @@
 package com.example.capstone.entity.comment;
 
 import com.example.capstone.entity.common.EntityDate;
+import com.example.capstone.entity.member.Member;
 import com.example.capstone.entity.pill.Pill;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
@@ -26,4 +27,8 @@ public class Comment extends EntityDate {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Pill pill;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(action = OnDeleteAction.NO_ACTION)
+    private Member member;
 }

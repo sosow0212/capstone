@@ -1,4 +1,4 @@
-package com.example.capstone.entity.taboo;
+package com.example.capstone.entity.contraindicate;
 
 import com.example.capstone.entity.common.EntityDate;
 import com.example.capstone.entity.pill.Pill;
@@ -13,7 +13,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Taboo extends EntityDate {
+public class contraindicate extends EntityDate {
     // 병용 금기
 
     @Id
@@ -22,12 +22,12 @@ public class Taboo extends EntityDate {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
-    private Pill pillA;
+    private Pill pill_a;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.NO_ACTION)
-    private Pill pillB;
+    private Pill pill_b;
 
     @Column(nullable = false)
-    private String content; // 내용
+    private String symptom; // 내용
 }

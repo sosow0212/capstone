@@ -6,7 +6,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @AllArgsConstructor
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -19,19 +19,14 @@ public class Member extends EntityDate {
     private String username;
 
     @Column(nullable = false)
-    private String password;
-
-    @Column(nullable = false)
-    private String name;
+    private String pw;
 
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
-    @Builder
-    public Member(String username, String password, String name) {
+    public Member(String username, String pw) {
         this.username = username;
-        this.password = password;
-        this.name = name;
+        this.pw = pw;
         this.authority = Authority.ROLE_USER;
     }
 
