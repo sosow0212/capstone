@@ -37,13 +37,13 @@ public class SignServiceUnitTest {
     @DisplayName("회원가입")
     void userSignupTest() {
         // given
-        SignupRequestDto req = new SignupRequestDto("user", "user123!", "이름");
+        SignupRequestDto req = new SignupRequestDto("user", "user123!");
 
         // when
         signService.signup(req);
 
         // then
-        verify(passwordEncoder).encode(req.getPassword());
+        verify(passwordEncoder).encode(req.getPw());
         verify(memberRepository).save(any());
     }
 
@@ -58,15 +58,4 @@ public class SignServiceUnitTest {
                 .isInstanceOf(LoginFailureException.class);
     }
 
-    @Test
-    @DisplayName("패스워드 검증 테스트")
-    void signInExceptionByInvalidPasswordTest() {
-        // given
-        given(memberRepository.findByUsername(any())).willReturn(Optional.of(createUser()));
-        given(passwordEncoder.matches(anyString(), anyString())).willReturn(false);
-
-        // when, then
-        assertThatThrownBy(() -> signService.signin(new LoginRequestDto("email", "password")))
-                .isInstanceOf(LoginFailureException.class);
-    }
 }

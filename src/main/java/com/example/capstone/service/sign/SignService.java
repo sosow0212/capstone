@@ -33,13 +33,7 @@ public class SignService {
     @Transactional
     public void signup(SignupRequestDto req) {
         validateSignUpInfo(req);
-
-        Member member = Member.builder()
-                .username(req.getUsername())
-                .password(passwordEncoder.encode(req.getPassword()))
-                .name(req.getName())
-                .build();
-
+        Member member = new Member(req.getUsername(), passwordEncoder.encode(req.getPw()));
         memberRepository.save(member);
     }
 
@@ -92,7 +86,7 @@ public class SignService {
     }
 
     private void validatePassword(LoginRequestDto loginRequestDto, Member member) {
-        if (!passwordEncoder.matches(loginRequestDto.getPassword(), member.getPassword())) {
+        if (!passwordEncoder.matches(loginRequestDto.getPw(), member.getPw())) {
             throw new LoginFailureException();
         }
     }

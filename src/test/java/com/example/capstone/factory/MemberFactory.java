@@ -8,8 +8,7 @@ public class MemberFactory {
     public static Member createUser() {
         Member member = Member.builder()
                 .username("user")
-                .password("!!user123")
-                .name("유저")
+                .pw("!!user123")
                 .build();
 
         return member;
