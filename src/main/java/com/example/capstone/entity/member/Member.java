@@ -24,6 +24,7 @@ public class Member extends EntityDate {
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
+    @Builder
     public Member(String username, String pw) {
         this.username = username;
         this.pw = pw;

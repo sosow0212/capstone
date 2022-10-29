@@ -107,6 +107,15 @@ public class ExceptionAdviceHandler {
         return Response.failure(404, "이미지 업로드 실패");
     }
 
+    // 404 응답
+    // 게시글 찾을 수 없음
+    @ExceptionHandler(BoardNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Response boardNotFoundException() {
+        return Response.failure(404, "게시글을 찾을 수 없습니다.");
+    }
+
+
     // 409 응답
     // username 중복
     @ExceptionHandler(MemberUsernameAlreadyExistsException.class)
