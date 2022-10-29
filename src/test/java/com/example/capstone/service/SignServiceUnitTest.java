@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
-import static com.example.capstone.factory.MemberFactory.createUser;
+import static com.example.capstone.factory.MemberFactory.createMember;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
@@ -51,7 +51,7 @@ public class SignServiceUnitTest {
     @DisplayName("로그인 실패 테스트")
     void signInExceptionByNoneMemberTest() {
         // given
-        given(memberRepository.findByUsername(any())).willReturn(Optional.of(createUser()));
+        given(memberRepository.findByUsername(any())).willReturn(Optional.of(createMember()));
 
         // when, then
         assertThatThrownBy(() -> signService.signin(new LoginRequestDto("hihi", "password")))

@@ -5,7 +5,7 @@ import com.example.capstone.entity.member.Member;
 
 public class MemberFactory {
 
-    public static Member createUser() {
+    public static Member createMember() {
         Member member = Member.builder()
                 .username("user")
                 .pw("!!user123")
