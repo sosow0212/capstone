@@ -43,7 +43,7 @@ public class SignServiceUnitTest {
         signService.signup(req);
 
         // then
-        verify(passwordEncoder).encode(req.getPw());
+        verify(passwordEncoder).encode(req.getPassword());
         verify(memberRepository).save(any());
     }
 

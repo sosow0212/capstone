@@ -19,15 +19,15 @@ public class Member extends EntityDate {
     private String username;
 
     @Column(nullable = false)
-    private String pw;
+    private String password;
 
     @Enumerated(EnumType.STRING)
     private Authority authority;
 
     @Builder
-    public Member(String username, String pw) {
+    public Member(String username, String password) {
         this.username = username;
-        this.pw = pw;
+        this.password = password;
         this.authority = Authority.ROLE_USER;
     }
 

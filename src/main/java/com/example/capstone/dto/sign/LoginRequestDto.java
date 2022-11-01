@@ -21,9 +21,9 @@ public class LoginRequestDto {
 
     @ApiModelProperty(value = "비밀번호", required = true, example = "123456")
     @NotBlank(message = "패스워드를 입력해주세요.")
-    private String pw;
+    private String password;
 
     public UsernamePasswordAuthenticationToken toAuthentication() {
-        return new UsernamePasswordAuthenticationToken(username, pw);
+        return new UsernamePasswordAuthenticationToken(username, password);
     }
 }

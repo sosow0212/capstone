@@ -22,5 +22,5 @@ public class SignupRequestDto {
     @ApiModelProperty(value = "패스워드", notes = "패스워드를 입력해주세요.", required = true, example = "password123!")
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", message = "비밀번호는 최소 8자리이면서 1개 이상의 알파벳, 숫자, 특수문자를 포함해야합니다.")
     @NotBlank(message = "패스워드를 입력해주세요. (비밀번호는 최소 8자리이면서 1개 이상의 알파벳, 숫자, 특수문자를 포함해야합니다.)")
-    private String pw;
+    private String password;
 }
