@@ -115,6 +115,14 @@ public class ExceptionAdviceHandler {
         return Response.failure(404, "게시글을 찾을 수 없습니다.");
     }
 
+    // 404 응답
+    // 병용금기 찾을 수 없음
+    @ExceptionHandler(NotFoundContraindicate.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Response NotFoundContraindicate() {
+        return Response.failure(404, "병용금기를 찾을 수 없습니다.");
+    }
+
 
     // 409 응답
     // username 중복
