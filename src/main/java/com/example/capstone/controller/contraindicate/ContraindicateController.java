@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ContraindicateController {
 
     private final ContraindicateService contraindicateService;
-    private final RedisTemplate<String, List<String>> redisTemplate;
+    private final RedisTemplate<String, String> redisTemplate;
 
     @ApiOperation(value = "병용금기 조회", notes = "병용금기 조회")
     @ResponseStatus(HttpStatus.OK)
