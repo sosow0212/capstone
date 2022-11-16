@@ -7,6 +7,7 @@ import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.http.HttpStatus;
@@ -31,25 +32,4 @@ public class ContraindicateController {
     public Response readContraindicate(@RequestParam("pill_a") String pill_a, @RequestParam("pill_b") String pill_b) {
         return Response.success(contraindicateService.findContraindicate(pill_a, pill_b));
     }
-
-//    @GetMapping("/redis")
-//    public Response redisRead(@RequestBody RequestContraindicateDto req) {
-//        // Map<약1 : List<>{약1, 약2}>
-//        return Response.success(contraindicateService.findContraindicate(req));
-//    }
-
-//    @GetMapping("/test/{key}")
-//    public Response test(@PathVariable("key") String key) {
-//        ValueOperations<String, List<String>> values = redisTemplate.opsForValue();
-//        String val = "test";
-//        return Response.success(values.get(val));
-//    }
-//
-//    @PostMapping("/test")
-//    public Response test2() {
-//        ValueOperations<String, List<String>> values = redisTemplate.opsForValue();
-//        values.set("test", List.of("testA", "testB"));
-//        return Response.success();
-//    }
-
 }
