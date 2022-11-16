@@ -117,7 +117,7 @@ public class ExceptionAdviceHandler {
 
     // 404 응답
     // 병용금기 찾을 수 없음
-    @ExceptionHandler(NotFoundContraindicate.class)
+    @ExceptionHandler(ContraindicateNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public Response NotFoundContraindicate() {
         return Response.failure(404, "병용금기를 찾을 수 없습니다.");
