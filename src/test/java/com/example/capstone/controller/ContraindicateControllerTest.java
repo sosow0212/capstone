@@ -4,11 +4,7 @@ import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.example.capstone.controller.board.BoardController;
 import com.example.capstone.controller.contraindicate.ContraindicateController;
-import com.example.capstone.entity.contraindicate.Contraindicate;
-import com.example.capstone.repository.member.MemberRepository;
-import com.example.capstone.service.board.BoardService;
 import com.example.capstone.service.contraindicate.ContraindicateService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
