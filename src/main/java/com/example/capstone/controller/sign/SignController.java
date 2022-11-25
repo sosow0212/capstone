@@ -16,7 +16,6 @@ import javax.validation.Valid;
 @Api(value = "Sign Controller", tags = "Sign")
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api")
 public class SignController {
 
     private final SignService signService;
