@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/java")
 public class AuthenticationController {
     private final MemberRepository memberRepository;
 
